@@ -1,0 +1,18 @@
+version: '3.2'
+
+services:
+  mysql-db:
+    image: mysql:8.0
+    container_name: mysql
+    restart: always
+    volumes:
+      - 'mysql-data:/var/lib/mysql'
+    ports:
+      - '3306:3306'
+    environment:
+      MYSQL_ROOT_USER: root
+      MYSQL_ROOT_PASSWORD: 123456
+      # MYSQL_DATABASE: ecom
+      TZ: Asia/Bangkok
+volumes:
+  mysql-data:
